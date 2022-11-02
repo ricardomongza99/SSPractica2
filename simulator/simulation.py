@@ -5,7 +5,7 @@ import random
 
 class Simulation():
 
-    def __init__(self, order_quantity, cost, price, iterations=10_000, lookup_table_type='a'):
+    def __init__(self, order_quantity, price, cost, iterations=10_000, lookup_table_type='a'):
         self.__order_quantity = order_quantity
         self.__cost = cost
         self.__price = price
