@@ -18,7 +18,7 @@ class Simulator():
                 sim = Simulation(order_quantity=order_quantity, price=price, cost=costs[i])
                 means.append(sim.mean)
                 stddevs.append(sim.stddev)
-            ax.plot(order_quantities, means, c=color_map(i), label=f"x = {to_euro(costs[i])}")
+            ax.plot(order_quantities, means, c=color_map(i), label=f"y = {to_euro(costs[i])}")
 
             # anotate max profit
             mean_max = max(means)
@@ -29,13 +29,14 @@ class Simulator():
                 ax.annotate(f'({x_max}, {to_euro(mean_max)})', xy=(x_max, mean_max+16), ha='center')
 
 
-        ax.set_title(f'Media de Ganancias por Unidades Pedidas (y = {to_euro(price)})')
+        ax.set_title(f'Ganancias medias por unidades pedidas (x = {to_euro(price)})')
         ax.set_xlabel('s')
-        ax.set_ylabel('Media ganancia')
+        ax.set_ylabel('Ganancia media')
         ax.yaxis.set_major_formatter('€{x:1.0f}')
         ax.legend(loc="upper left")
         ax.grid(linestyle = '--')
         fig.tight_layout()
 
-        plt.savefig('result.png', dpi=400)
+        plt.savefig(f'images/a_x={price}.png', dpi=400)
         #plt.show()
+    
