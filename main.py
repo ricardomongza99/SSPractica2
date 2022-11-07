@@ -4,19 +4,11 @@ from simulator.data_generator import generate_table_b, generate_table_a, generat
 def main():
     simulator = Simulator()
 
-    table = generate_table_a(100)
-
-    s = 0
-
-    for i in range(len(table)):
-        print(f'{i}: {table[i]}')
-
-    #print(generate_table_b(100))
-
-    # simulator.run(price=8, costs=[1, 5, 8, 10], lookup_table_type='b')
-    # simulator.run(price=5, costs=[1, 5, 8, 10], lookup_table_type='b')
-    # simulator.run(price=10, costs=[1, 5, 8, 10], lookup_table_type='b')
-    # simulator.run(price=15, costs=[1, 5, 8, 10], lookup_table_type='b')
+    simulator.run_iterations(iterations=[100, 1_000, 10_000, 100_000], price=10, cost=8, lookup_table_type='a')
+    #simulator.run(price=20, costs=[15, 16, 17, 18], lookup_table_type='c')
+    #simulator.run(price=8, costs=[1, 5, 8, 10], lookup_table_type='c')
+    #simulator.run(price=10, costs=[1, 5, 8, 10], lookup_table_type='a')
+    #simulator.run(price=15, costs=[1, 5, 8, 10], lookup_table_type='c')
 
 
 if __name__ == '__main__':
