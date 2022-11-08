@@ -1,5 +1,5 @@
 from simulator import Simulator
-from simulator.data_generator import generate_table_b, generate_table_a, generate_table_c
+from simulator.data_generator import DataGeneratorEfficiencyChecker
 
 def main():
     simulator = Simulator()
@@ -12,5 +12,10 @@ def main():
     #simulator.run(15, [1, 5, 8, 10], table='a')
 
 
+def test_generators():
+    dgec = DataGeneratorEfficiencyChecker()
+    dgec.run()
+
+
 if __name__ == '__main__':
-    main()
+    test_generators()
